@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>References | Quality Gurus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+    
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 5rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+    
+    .hero-section h1, .hero-section p {
+      color: white;
+    }
+    
+    section {
+      padding: 3rem 0;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    a:hover {
+      color: #217dbb;
+    }
+    
+    .list-unstyled li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+      color: white;
+    }
+    
+    .guru-section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 1.5rem 0;
+    }
+
+    .reference-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .reference-list strong {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    
+    .reference-list ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .reading-section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .reading-section h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .reading-section ol {
+      padding-left: 0;
+    }
+    
+    .reading-section ol li {
+      margin-bottom: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-award me-2"></i>Quality Gurus
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gurus.html"><i class="fas fa-users me-1"></i> Explore Gurus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="interactive.html"><i class="fas fa-chart-line me-1"></i> Interactive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="references.html"><i class="fas fa-book me-1"></i> References</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">References & Further Reading</h1>
+      <p class="hero-subtitle">Explore resources to deepen your knowledge about quality management gurus and their methodologies.</p>
+      <!-- <a href="#guru-cards" class="btn btn-outline-light px-4 py-2">Discover Their Legacy</a> -->
+    </div>
+  </section>
+  <!-- <section class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-4">References & Further Reading</h1>
+      <p class="lead">Explore resources to deepen your knowledge about quality management gurus and their methodologies.</p>
+    </div>
+  </section> -->
+
+  <!-- References Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 section-title">Quality Management Thinkers</h2>
+      
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <ul class="reference-list">
+            <!-- Deming -->
+            <li>
+              <strong>W. Edwards Deming</strong>
+              <ul>
+                <li><a href="https://deming.org/" target="_blank">The Deming Institute</a></li>
+              </ul>
+            </li>
+
+            <!-- Juran -->
+            <li>
+              <strong>Joseph M. Juran</strong>
+              <ul>
+                <li><a href="https://www.business.com/articles/management-theory-of-joseph-juran/" target="_blank">Management Theory of Joseph Juran – Business.com</a></li>
+                <li><a href="https://academic.oup.com/edited-volume/37216/chapter/327588628" target="_blank">Oxford Academic Chapter on Juran</a></li>
+                <li><a href="https://idoc.pub/documents/philosophy-of-dr-joseph-juran-51438my2qglj" target="_blank">Philosophy of Dr. Joseph Juran – iDoc</a></li>
+              </ul>
+            </li>
+
+            <!-- Ishikawa -->
+            <li>
+              <strong>Kaoru Ishikawa</strong>
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Kaoru_Ishikawa" target="_blank">Kaoru Ishikawa – Wikipedia</a></li>
+              </ul>
+            </li>
+
+            <!-- Bill Smith -->
+            <li>
+              <strong>Bill Smith (Six Sigma)</strong>
+              <ul>
+                <li>Harry, M., & Schroeder, R. (2000). <em>Six Sigma</em>. Currency.</li>
+                <li><a href="https://www.motorola.com/sixsigma" target="_blank">Motorola – History of Six Sigma</a></li>
+                <li><a href="https://asq.org/quality-resources/six-sigma" target="_blank">ASQ – Bill Smith and Six Sigma</a></li>
+              </ul>
+            </li>
+
+            <!-- Shigeo Shingo -->
+            <li>
+              <strong>Shigeo Shingo</strong>
+              <ul>
+                <li>Shingo, S. (1985). <em>The Shingo System of Lean Production</em>. McGraw-Hill.</li>
+                <li>Shingo, S. (1989). <em>A Study of the Toyota Production System</em>. Productivity Press.</li>
+                <li>Liker, J. K. (2004). <em>The Toyota Way</em>. McGraw-Hill.</li>
+              </ul>
+            </li>
+
+            <!-- Philip B. Crosby -->
+            <li>
+              <strong>Philip B. Crosby</strong>
+              <ul>
+                <li><a href="https://asq.org/quality-progress/articles/philip-b-crosbys-mark-on-quality" target="_blank">ASQ – Crosby's Mark on Quality</a></li>
+                <li><a href="https://qmc.binus.ac.id/2017/01/18/philip-crosbys-principles/" target="_blank">BINUS QMC – Crosby's Principles</a></li>
+              </ul>
+            </li>
+
+            <!-- Taiichi Ohno -->
+            <li>
+              <strong>Taiichi Ohno</strong>
+              <ul>
+                <li>Ohno, T. (1988). <em>Toyota Production System: Beyond Large-Scale Production</em>. Productivity Press.</li>
+                <li>Liker, J. K. (2004). <em>The Toyota Way</em>. McGraw-Hill.</li>
+                <li><a href="https://global.toyota/en/company/vision-and-philosophy/production-system/" target="_blank">Toyota Global – TPS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Further Reading -->
+  <section id="further-reading" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 section-title">Further Reading</h2>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>W. Edwards Deming</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=XpcUEyuD_UI" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>W. Edwards Deming: The Father of Quality Management</a></li>
+              <li><a href="https://www.youtube.com/watch?v=bEJa867kzsE" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Who is W. Edwards Deming? - A Quality Guru</a></li>
+              <li><a href="https://www.youtube.com/watch?v=hjv-j9dj3HU" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Dr. Edwards Deming - The Father of Quality Management</a></li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>Joseph M. Juran</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=j8LJlSfiT9w" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Juran's Quality Trilogy</a></li>
+              <li><a href="https://www.youtube.com/watch?v=MrMK63bWoEM" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Who is Joseph M. Juran? - A Quality Guru</a></li>
+              <li><a href="https://www.youtube.com/watch?v=umkh4pUnAhg" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Quality Guru Joseph Juran</a></li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>Philip B. Crosby</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=YP2Y4NvaDpk" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Philip Crosby - Quality Guru</a></li>
+              <li><a href="https://www.youtube.com/watch?v=CYRYVoQX-gg" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>The Art of Hassle-Free Management by Philip Crosby</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Adz44tOgvaE" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Four Absolutes of Quality from Philip Crosby</a></li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>Kaoru Ishikawa</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=xlnNCUbDpvI" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Who is Kaoru Ishikawa? - A Quality Guru</a></li>
+              <li><a href="https://www.youtube.com/watch?v=GAjpdYRLZ7w" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Quality Guru Part 5 of 12 - Dr. K. Ishikawa</a></li>
+              <li><a href="https://www.youtube.com/watch?v=DZwajTjyPmA" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Quality (Part 2: Ishikawa Diagram)</a></li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>Genichi Taguchi</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=-FQ4CkQsQUE" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Taguchi Methods in Quality Engineering</a></li>
+              <li><a href="https://www.youtube.com/watch?v=zdmmUwCQwjU" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Understanding the Taguchi Loss Function</a></li>
+              <li><a href="https://www.youtube.com/watch?v=anJjIXbthao" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Taguchi's Robust Design Principles</a></li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+          <div class="reading-section">
+            <h3><i class="fas fa-book-reader me-2"></i>Shigeo Shingo</h3>
+            <ol class="list-unstyled">
+              <li><a href="https://www.youtube.com/watch?v=lKLdma9Ye0s" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>Poka-Yoke: Mistake-Proofing by Shigeo Shingo</a></li>
+              <li><a href="https://www.youtube.com/watch?v=y4QYo1-OzrE" target="_blank"><i class="fab fa-youtube me-2 text-danger"></i>The Shingo Model for Operational Excellence</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Footer -->
+<footer class="bg-dark pt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <!-- Brand Section -->
+      <div class="col-md-4">
+        <h5 class="text-white mb-3 fw-bold">Quality Gurus</h5>
+        <p class="text-light opacity-75 mb-0">DSC 3372 – Quality Management</p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="col-md-4">
+        <div class="footer-links d-flex flex-column flex-md-row gap-3 justify-content-center">
+          <a href="index.html" class="text-light text-decoration-none hover-accent">Home</a>
+          <a href="gurus.html" class="text-light text-decoration-none hover-accent">Gurus</a>
+          <a href="interactive.html" class="text-light text-decoration-none hover-accent">Interactive</a>
+ 
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4 d-flex justify-content-md-end">
+        <div class="social-icons">
+          <a href="https://github.com/N1wan7ha" class="text-decoration-none" target="_blank" rel="noopener">
+            <div class="icon-container bg-accent hover-scale">
+              <i class="fab fa-github text-white"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-top border-light opacity-25 pt-4">
+      <div class="text-center text-light opacity-75">
+        <small>© 2025 Quality Gurus | All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Initialize with hidden back-to-top button
+    backToTopButton.style.display = 'none';
+  </script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quality Gurus | Defects 2 Perfection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #3a6ea5;
+      --secondary: #397cf8;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --accent: #ffc107;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--light) !important;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, rgba(58, 110, 165, 0.9), rgba(44, 62, 80, 0.9)), url('assets/images/quality-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 7rem 0;
+      position: relative;
+    }
+    
+    .hero-pattern {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' class='shape-fill'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' class='shape-fill'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' class='shape-fill'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .btn-primary {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      border-radius: 50px;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #ff5252;
+      border-color: #ff5252;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    }
+    
+    .section-title {
+      font-weight: 700;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: var(--secondary);
+      bottom: -10px;
+      left: 25%;
+    }
+    
+    .feature-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .feature-card h3 {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .tqm-section {
+      background-color: #f7f9fc;
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .guru-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .guru-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .guru-card img {
+      transition: all 0.3s ease;
+    }
+    
+    .guru-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .guru-name {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .about-section {
+      background: linear-gradient(135deg, #f7f9fc, #e9ecef);
+    }
+    
+    .team-img {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      background-color: var(--dark);
+      padding: 3rem 0 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social-icons {
+      font-size: 1.3rem;
+    }
+    
+    .social-icons a {
+      color: rgba(255,255,255,0.7);
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--secondary);
+    }
+    
+    .list-styled {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .list-styled li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .list-styled li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+    
+    .section-padding {
+      padding: 5rem 0;
+    }
+    
+    .rounded-image {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .text-highlight {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--secondary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: #ff5252;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        background-color: var(--dark);
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-award me-2"></i>Quality Gurus
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gurus.html"><i class="fas fa-users me-1"></i> Explore Gurus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="interactive.html"><i class="fas fa-chart-line me-1"></i> Interactive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="references.html"><i class="fas fa-book me-1"></i> References</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-3">Defects 2 Perfection</h1>
+      <h3 class="h4 mb-4">Mastering Quality: Explore the Pioneers who Redefined Excellence</h3>
+      <p class="lead mb-5">Learn about the visionary thinkers who shaped modern quality management practices and transformed industries.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="gurus.html" class="btn btn-primary btn-lg"><i class="fas fa-users me-2"></i>Explore the Gurus</a>
+        <a href="#about" class="btn btn-primary btn-lg"><i class=""></i>Learn More</a>
+        
+        
+      </div>
+    </div>
+    <div class="hero-pattern"></div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title">Why This Website?</h2>
+          <p class="mb-4">Our goal is to provide a comprehensive and engaging resource on renowned quality thinkers who revolutionized modern business practices. Whether you're a student, professional, or quality enthusiast, you'll find valuable insights into:</p>
+        </div>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <div class="feature-card p-4 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Total Quality Management</h3>
+            <p>Discover the fundamental principles of TQM that continue to drive business excellence worldwide.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-sitemap"></i>
+            </div>
+            <h3>Six Sigma</h3>
+            <p>Explore the methodologies that have helped organizations reduce defects and optimize processes.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Kaizen</h3>
+            <p>Learn about continuous improvement philosophy that revolutionized manufacturing and service industries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Gain Section -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title">What You'll Gain</h2>
+          <p class="mb-4">Whether you're a student, professional, or quality enthusiast, unlock valuable insights from quality pioneers:</p>
+          <ul class="list-styled">
+            <li>Deming's 14 Points decoded for modern teams</li>
+            <li>Juran's Quality Trilogy explained step-by-step</li>
+            <li>Proven frameworks to eliminate waste and drive innovation</li>
+            <li>Historical context and evolution of quality practices</li>
+            <li>Interactive tools to apply quality principles in real-world scenarios</li>
+          </ul>
+          <a href="gurus.html" class="btn btn-primary mt-3">Discover More</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="ratio ratio-16x9">
+            <img src="assets/images/Quality-Management-768x319.jpg" alt="Our Team" class="img-fluid team-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TQM Section -->
+  <section class="tqm-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <img src="assets/images/quality.jpg" alt="Total Quality Management" class="img-fluid rounded-image">
+        </div>
+        <div class="col-lg-7">
+          <h2 class="section-title">Total Quality Management (TQM)</h2>
+          <p>The philosophy of <span class="text-highlight">Total Quality Management (TQM)</span> is based on the notion that customer satisfaction is the key to an organization's long-term success. It highlights that quality is a comprehensive approach that encompasses all organizational functions and personnel, rather than just the lack of flaws in a good or service.</p>
+          <p>According to this fundamental perspective, quality is an ongoing endeavor that necessitates a dedication to process improvement at every level, from initial design and production to customer support and service. The broad definition of quality and the emergence of shared responsibility are essential to this description.</p>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h5 class="mb-0">Customer Focus</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <h5 class="mb-0">Continuous Improvement</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <i class="fas fa-chess"></i>
+                </div>
+                <h5 class="mb-0">Strategic Planning</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <h5 class="mb-0">Total Involvement</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Gurus Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title">The Quality Gurus</h2>
+          <p class="mb-5">Those who have made substantial contributions to the theory and practice of quality management are known as quality gurus. They created approaches, ideologies, and instruments that assist businesses in enhancing their offerings in terms of services, goods, and procedures.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card guru-card h-100">
+            <img src="assets/images/Picture1.png" class="card-img-top" alt="W. Edwards Deming">
+            <div class="card-body text-center">
+              <h4 class="guru-name">W. Edwards Deming</h4>
+              <p class="card-text">Known for his 14 Points for Management and the PDCA cycle that revolutionized quality practices worldwide.</p>
+              <a href="gurus.html#deming" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card guru-card h-100">
+            <img src="assets/images/joseph_juran-e1602452804353.jpg" class="card-img-top" alt="Joseph M. Juran">
+            <div class="card-body text-center">
+              <h4 class="guru-name">Joseph M. Juran</h4>
+              <p class="card-text">Developed the Quality Trilogy and the Pareto Principle applied to quality management.</p>
+              <a href="gurus.html#juran" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card guru-card h-100">
+            <img src="assets/images/Picture2.png" class="card-img-top" alt="Philip B. Crosby">
+            <div class="card-body text-center">
+              <h4 class="guru-name">Philip B. Crosby</h4>
+              <p class="card-text">Championed the "Zero Defects" approach and the concept that quality is free.</p>
+              <a href="gurus.html#crosby" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="gurus.html" class="btn btn-primary">View All Quality Gurus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-section section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+          <img src="assets/images/aboutus.jpg" alt="Our Team" class="img-fluid team-img">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2 class="section-title">About Us</h2>
+          <p>We are a team of students passionate about quality management and its importance in modern business operations. This website was developed as part of an educational project to share information about the pioneering figures who have shaped quality practices globally.</p>
+          <p>Our mission is to make quality management principles accessible and engaging for everyone from students to seasoned professionals.</p>
+          <div class="d-flex align-items-center mt-4">
+            <div class="bg-primary rounded-circle text-white p-3 me-3">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h5 class="mb-0">Educational Project</h5>
+              <p class="text-muted mb-0">Created by students, for anyone who interested in Quality Management</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mt-3">
+            <div class="bg-primary rounded-circle text-white p-3 me-3">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div>
+              <h5 class="mb-0">Sharing Knowledge</h5>
+              <p class="text-muted mb-0">Making quality management accessible</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section-padding bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="mb-4">Ready to dive deeper into quality management?</h2>
+      <p class="lead mb-4">Explore our interactive tools, case studies, and comprehensive profiles of quality pioneers.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="gurus.html" class="btn btn-light btn-lg">Explore the Gurus</a>
+        <a href="interactive.html" class="btn btn-outline-light btn-lg">Try Interactive Tools</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-dark pt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <!-- Brand Section -->
+      <div class="col-md-4">
+        <h5 class="text-white mb-3 fw-bold">Quality Gurus</h5>
+        <p class="text-light opacity-75 mb-0">DSC 3372 – Quality Management</p>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="col-md-4">
+        <div class="footer-links d-flex flex-column flex-md-row gap-3 justify-content-center">
+
+          <a href="gurus.html" class="text-light text-decoration-none hover-accent">Gurus</a>
+          <a href="interactive.html" class="text-light text-decoration-none hover-accent">Interactive</a>
+          <a href="references.html" class="text-light text-decoration-none hover-accent">References</a>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4 d-flex justify-content-md-end">
+        <div class="social-icons">
+          <a href="https://github.com/N1wan7ha" class="text-decoration-none" target="_blank" rel="noopener">
+            <div class="icon-container bg-accent hover-scale">
+              <i class="fab fa-github text-white"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-top border-light opacity-25 pt-4">
+      <div class="text-center text-light opacity-75">
+        <small>© 2025 Quality Gurus | All Rights Reserved</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
